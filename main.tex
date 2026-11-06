@@ -1,0 +1,31 @@
+% !TeX program = xelatex
+% 唯一编译入口；可改名或整体移动，不需要固定的 TeX root 声明。
+% 可选：fonts=fandol（替代字体预览），frontnumbering=abstract（摘要从 I 起）。
+% 可选：blind=true（基础匿名；仍须手动审查全文和外部图片）。
+\documentclass[fonts=system,frontnumbering=all]{usc-thesis}
+\input{thesis-setup}
+
+\begin{document}
+\makecover
+\frontmatter
+\maketitlepage
+\makedeclaration
+\uscstartabstracts
+\input{frontmatter/abstract-cn}
+\input{frontmatter/abstract-en}
+\tableofcontents
+\input{frontmatter/symbols}
+
+\mainmatter
+\input{chapters/01-introduction}
+\input{chapters/02-methods}
+\input{chapters/03-results}
+\input{chapters/04-conclusions}
+\uscprintbibliography
+
+\appendix
+\input{backmatter/appendix-a}
+\uscbackmatter
+\input{backmatter/achievements}
+\uscifblind{}{\input{backmatter/acknowledgements}}
+\end{document}
